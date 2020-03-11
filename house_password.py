@@ -1,22 +1,31 @@
 def checkio(data: str) -> bool:
-	
+
 	conditions = []
-	
+
+    # 10 or more characters
 	if len(data) >= 10:
 		conditions.append(True)
 	else:
 		conditions.append(False)
-	
+
+    # Contains digit
 	if any(char.isdigit() for char in data):
 		conditions.append(True)
 	else:
 		conditions.append(False)
-	
+
+    # Contains Upper
 	if any(char.isupper() for char in data):
 		conditions.append(True)
 	else:
 		conditions.append(False)
-	
+
+    # Contains Lower
+    if any(char.islower() for char in data):
+        conditions.append(True)
+    else:
+        conditions.append(False)
+
 	print(conditions)
 	
 	if all(conditions):
@@ -36,5 +45,6 @@ if __name__ == '__main__':
 	assert checkio('QWERTYqwerty') == False, "4th example"
 	assert checkio('123456123456') == False, "5th example"
 	assert checkio('QwErTy911poqqqq') == True, "6th example"
+    assert checio('DHJK87DSKJHWW68D') == False, "7th example"
 	print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")
 
