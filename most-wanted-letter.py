@@ -1,11 +1,15 @@
 #  https://github.com/Bryukh-Checkio-Tasks/checkio-task-most-wanted-letter.git { 36 }
 
-from collections import Counter
+import collections
+import operator
+
 
 def checkio(text: str) -> str:
-    wc = Counter(text.lower())
-    s = max(wc.values())
-    print(wc, s)
+    x =  dict(collections.Counter(text.lower()))
+    print(x)
+    y = max(x.items(), key=operator.itemgetter(1))[0]
+    print(y)
+    return y
 
 if __name__ == '__main__':
     print("Example:")
@@ -24,3 +28,8 @@ if __name__ == '__main__':
 
 # Research
 # https://www.geeksforgeeks.org/python-program-to-find-the-most-occurring-character-and-its-count/
+# https://stackoverflow.com/questions/4131123/finding-the-most-frequent-character-in-a-string
+# Ok this most common thing is built into Counter
+
+# https://docs.python.org/3/library/collections.html#counter-objects
+# https://stackoverflow.com/questions/268272/getting-key-with-maximum-value-in-dictionary
