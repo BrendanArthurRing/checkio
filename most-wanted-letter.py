@@ -7,11 +7,18 @@ import operator
 def checkio(text: str) -> str:
     x =  dict(collections.Counter(text.lower()))
     print(x)
-    y = max(x.items(), key=operator.itemgetter(1))[0]
+    y = x.items()
     print(y)
-    return y
+    z = max(y, key=operator.itemgetter(3))
+    print(z)
 
-if __name__ == '__main__':
+    #return z
+
+checkio("Hello World")
+checkio("One")
+
+test = False
+if __name__ == '__main__' and test == True:
     print("Example:")
     print(checkio("Hello World!"))
 
@@ -25,6 +32,7 @@ if __name__ == '__main__':
     print("Start the long test")
     assert checkio("a" * 9000 + "b" * 1000) == "a", "Long."
     print("The local tests are done.")
+
 
 # Research
 # https://www.geeksforgeeks.org/python-program-to-find-the-most-occurring-character-and-its-count/
