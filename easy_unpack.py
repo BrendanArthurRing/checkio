@@ -1,12 +1,12 @@
 # https://py.checkio.org/en/mission/easy-unpack/
-#  https://github.com/oduvan/checkio-mission-elementary-unpack { 13 }
+# https://github.com/oduvan/checkio-mission-elementary-unpack { 13 }
 
 def easy_unpack(elements: tuple) -> tuple:
     """
         returns a tuple with 3 elements - first, third and second to the last
     """
     # your code here
-    return ()
+    return (elements[0], elements[2], elements[-2])
 
 if __name__ == '__main__':
     print('Examples:')
