@@ -5,7 +5,7 @@ import operator
 import re
 
 def checkio(text: str) -> str:
-    text = re.sub('[\W_]', '', text)
+    text = re.sub('[^a-zA-Z_]', '', text)
     letter_count =  dict(collections.Counter(text.lower()))
     sorted_letter_count = sorted(letter_count.items())
     most_frequent_letter = max(sorted_letter_count, key=operator.itemgetter(1))[0]
