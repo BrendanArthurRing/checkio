@@ -19,6 +19,7 @@ if __name__ == '__main__':
     assert checkio(1111) == 1
     print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")
 
+
 '''
  You are given a positive integer. Your function should calculate the product of the digits excluding any zeroes.
 
