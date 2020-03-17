@@ -5,19 +5,15 @@ import operator
 
 
 def checkio(text: str) -> str:
-    x =  dict(collections.Counter(text.lower()))
-    print(x)
-    y = x.items()
-    print(y)
-    z = max(y, key=operator.itemgetter(3))
-    print(z)
-
-    #return z
+    letter_count =  dict(collections.Counter(text.lower()))
+    sorted_letter_count = sorted(letter_count.items())
+    most_frequent_letter = max(sorted_letter_count, key=operator.itemgetter(1))[0]
+    return most_frequent_letter
 
 checkio("Hello World")
 checkio("One")
 
-test = False
+test = True
 if __name__ == '__main__' and test == True:
     print("Example:")
     print(checkio("Hello World!"))
