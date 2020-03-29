@@ -2,7 +2,7 @@
 
 def number_length(a: int) -> int:
     # your code here
-    return None
+    return int(len(str(a)))
 
 
 if __name__ == '__main__':
