@@ -1,9 +1,21 @@
 # https://py.checkio.org/en/mission/split-list/
 
 def split_list(items: list) -> list:
+    items_len = len(items)
+    b = items_len / 2
+    c = round(b)
+    d = items_len - c
+    e = sorted([c, d], reverse=True)
+    print(items[:e[0]], items[e[0]+1:e[1]])
     # your code here
     return [items]
 
+# Split list
+# if even len return split of equal lens
+# if odd len return first list more len
+# if empty return two empty lists
+# the round() function uses bankers rounding
+# it rounds .5 to the nearest even number
 
 if __name__ == '__main__':
     print("Example:")
