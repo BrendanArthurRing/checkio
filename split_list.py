@@ -4,10 +4,8 @@ import math
 
 def split_list(items: list) -> list:
     split_point = math.ceil(len(items) / 2)
-    result = [items[:split_point], items[split_point:]]
-    # your code here
-    print(result)
-    return result
+    return [items[:split_point], items[split_point:]]
+
 
 # Split list
 # if even len return split of equal lens
