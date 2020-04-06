@@ -4,8 +4,10 @@ def checkio(array: list) -> int:
     """
         sums even-indexes elements and multiply at the last
     """
-    print([array[i] for i in range(len(array),2)])
-    return 0
+    if array:
+        return sum(array[::2]) * array[-1]
+    else:
+        return 0
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
