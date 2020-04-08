@@ -18,6 +18,9 @@ def first_word(text: str) -> str:
         if i:
             return i
 
+# Research
+# https://machinelearningmastery.com/clean-text-machine-learning-python/
+
 
 if __name__ == '__main__':
     print("Example:")
