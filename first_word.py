@@ -1,11 +1,22 @@
 # https://py.checkio.org/en/mission/first-word/
 
+import string
+
 def first_word(text: str) -> str:
     """
         returns the first word in a given text.
     """
     # your code here
-    return text[0:2]
+    text = text.replace(".", " ")
+    words = text.split(" ")
+    punctuation = string.punctuation
+    punctuation = punctuation.replace("'", "")
+    mapping_table = str.maketrans("", "", punctuation)
+    stripped_words = [word.translate(mapping_table) for word in words]
+    print(stripped_words)
+    for i in stripped_words:
+        if i:
+            return i
 
 
 if __name__ == '__main__':
