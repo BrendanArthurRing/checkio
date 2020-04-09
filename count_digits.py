@@ -2,7 +2,12 @@
 
 def count_digits(text: str) -> int:
     # your code here
-    return 0
+    counter = 0
+    numbers = '1234567890'
+    for char in text:
+        if char in numbers:
+            counter += 1
+    return counter
 
 
 if __name__ == '__main__':
