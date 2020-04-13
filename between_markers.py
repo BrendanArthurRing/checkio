@@ -5,9 +5,20 @@ def between_markers(text: str, begin: str, end: str) -> str:
         returns substring between two given markers
     """
     # your code here
-    first = text.split(end)[0]
-    last = first.split(begin)[1]
-    return last
+    if begin not in text:
+        if end not in text:
+            return text
+        if end in text:
+            return text.split(end)[0]
+        
+    if end not in text:
+        return text.split(begin)[1]
+
+    if end in text.split(begin)[0]:
+        return ""
+    
+    return (text.split(begin)[1]).split(end)[0]
+
 
 if __name__ == '__main__':
     print('Example:')
@@ -22,3 +33,12 @@ if __name__ == '__main__':
     assert between_markers('No hi', '[b]', '[/b]') == 'No hi', 'No markers at all'
     assert between_markers('No <hi>', '>', '<') == '', 'Wrong direction'
     print('Wow, you are doing pretty good. Time to check it!')
+
+
+
+
+# The initial and final markers are always different.
+# If there is no initial marker, then the first character should be considered the beginning of a string.    
+# If there is no final marker, then the last character should be considered the ending of a string.
+# If the initial and final markers are missing then simply return the whole string.
+# If the final marker comes before the initial marker, then return an empty string.
