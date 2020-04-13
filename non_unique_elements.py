@@ -2,18 +2,12 @@
 
 #Your optional code here
 #You can import some modules or create additional functions
-
-
 def checkio(data: list) -> list:
-    #Your code here
-    #It's main function. Don't remove this function
-    #It's used for auto-testing and must return a result for check.  
-
-    #replace this for solution
-    import collections
-    counts = collections.Counter(data)
-    print(counts)
-    return data
+    unique = []
+    for i in data:
+        if data.count(i) > 1:
+            unique.append(i)
+    return unique
 
 #Some hints
 #You can use list.count(element) method for counting.
