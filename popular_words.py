@@ -3,11 +3,10 @@
 def popular_words(text: str, words: list) -> dict:
     # your code here
     import collections
-    c = collections.Counter(text.lower().split(" "))
+    c = collections.Counter(text.lower().replace("\n", " ").split(" "))
     d = dict()
     for i in words:
         d[i] = c[i]
-    print(d)
     return d
 
 
