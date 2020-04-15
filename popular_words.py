@@ -2,7 +2,13 @@
 
 def popular_words(text: str, words: list) -> dict:
     # your code here
-    return None
+    import collections
+    c = collections.Counter(text.lower().split(" "))
+    d = dict()
+    for i in words:
+        d[i] = c[i]
+    print(d)
+    return d
 
 
 if __name__ == '__main__':
