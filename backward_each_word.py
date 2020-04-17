@@ -1,4 +1,5 @@
 # https://py.checkio.org/en/mission/backward-each-word/
+# complete
 
 def backward_string_by_word(text: str) -> str:
     # your code here

@@ -2,9 +2,10 @@
 # https://github.com/Bryukh-Checkio-Tasks/checkio-task-forbidden-sum.git { 11 }
 
 def checkio(data):
-    result = data.__add__(0)
+    result = 0
+    i = 0
+    result += data[i]
     return result
-
 
 
 
