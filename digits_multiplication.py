@@ -1,5 +1,6 @@
 # https://py.checkio.org/en/mission/digits-multiplication/
 # https://github.com/Bryukh-Checkio-Tasks/checkio-task-digits-multiplication { 37 }
+# complete
 
 import numpy
 

@@ -1,4 +1,5 @@
 # https://py.checkio.org/en/mission/end-zeros/
+# complete
 
 def end_zeros(num: int) -> int:
     # your code here

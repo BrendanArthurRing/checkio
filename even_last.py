@@ -1,4 +1,5 @@
 # https://py.checkio.org/en/mission/even-last/
+# complete
 
 def checkio(array: list) -> int:
     """
