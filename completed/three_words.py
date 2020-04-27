@@ -6,7 +6,7 @@ def checkio(words: str) -> bool:
 
 
     for i in possible_words:
-        if succession <= 3:
+        if succession < 3:
             if i.isalpha():
                 succession += 1
             else:
@@ -16,8 +16,6 @@ def checkio(words: str) -> bool:
         return True
     else:
         return False
-    
-    
 
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
