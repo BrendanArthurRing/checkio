@@ -1,17 +1,23 @@
 # https://py.checkio.org/en/mission/sum-numbers/
 
 def sum_numbers(text: str) -> int:
-    # your code here
-    lst = text.split(" ")
-    for i in lst:
+
+    split_list = text.split(" ")
+    numbers = []
+    
+    for i in split_list:
         try:
-            int(i)
-            breakpoint()
+            numbers.append(int(i))
+            #breakpoint()
         except:
             continue
-
-
-    return 0
+    
+    if len(numbers) < 1:
+        return 0
+    elif len(numbers) == 1:
+        return numbers[0]
+    else:
+        return sum(numbers)
 
 
 if __name__ == '__main__':
