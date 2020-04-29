@@ -1,45 +1,38 @@
 # https://py.checkio.org/en/mission/pawn-brotherhood/
 
-ranks = ["1", "2", "3", "4", "5", "6", "7", "8"]
-files = ["a", "b", "c", "d", "e", "f", "g", "h"]
+def square_to_coord(c: str) -> tuple:
+    c = list(c)
+    return (ord(c[0]) - 96, int(c[1]))
 
-def split_coord(coord: str) -> list:
-    return coord.split()
-
-def pawn_bros(coord: str) -> list:
-    coords = split_coord(coord)
-    left_bro, right_bro = None, None
-    lb = ""
-    rb = ""
-    
-    if coord[1] != "1":
-        left_bro_file = files[files.index(coords[0]) - 1]
-        left_bro = True
-    if coord[1] != "8":
-        right_bro_file = files[files.index(coords[0]) + 1]
-        right_bro = True
-    if coord[0] != "a":
-        bros_rank = ranks[ranks.index(coords[1]) - 1]
-    
-    if left_bro:
-        lb = left_bro_file + bros_rank
-    if right_bro:
-        rb = right_bro_file + bros_rank
-    
-    return [lb, rb]
-
-
-
-    
-
+def pawn_bros(pawn: tuple) -> list:
+    x = pawn[0]
+    y = pawn[1]
+    b1 = (x - 1, y - 1)
+    b2 = (x + 1, y - 1)
+    if all(b1) and all(b2):
+        return [b1, b2]
+    if all(b1):
+        return [b1]
+    if all(b2):
+        return [b2]
+    return []
+        
 def safe_pawns(pawns: set) -> int:
     safe = 0
-    for p in pawns:
-        bros = pawn_bros(p)
-        if bros[0] in pawns or bros[1] in pawns:
-            safe += 1
+    p_coords = []
 
+    for p in pawns:
+        p_coords.append(square_to_coord(p))
+    
+    for p in p_coords:
+        pb = pawn_bros(p)
+        if pb:
+            if pb[0] in p_coords or pb[1] in p_coords:
+                safe += 1
+        
     return safe
+
+
 
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
