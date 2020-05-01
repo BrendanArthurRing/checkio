@@ -1,8 +1,9 @@
 # https://py.checkio.org/en/mission/all-upper-ii/
 
 def is_all_upper(text: str) -> bool:
-    # your code here
-    return False
+    chars = [c for c in text if c.isalpha()]
+    return all(char.isupper() for char in chars) if chars else False
+
 
 
 if __name__ == '__main__':
@@ -14,4 +15,5 @@ if __name__ == '__main__':
     assert is_all_upper('all lower') == False
     assert is_all_upper('mixed UPPER and lower') == False
     assert is_all_upper('') == False
+    assert is_all_upper('   ') == False
     print("Coding complete? Click 'Check' to earn cool rewards!")
