@@ -1,8 +1,17 @@
 # https://py.checkio.org/en/mission/sun-angle/
 
-def sun_angle(time):
+def sun_angle(time: str) -> int or str:
     #replace this for solution
-    return time
+
+    # convert time to minutes
+    t = time.split(":")
+    minutes = (int(t[0]) * 60) + int(t[1])
+
+    if minutes >= 360 and minutes <= 1080:
+        m = minutes - 360
+        return int(m / 4)
+    else:
+        return "I don't see the sun!"
 
 if __name__ == '__main__':
     print("Example:")
