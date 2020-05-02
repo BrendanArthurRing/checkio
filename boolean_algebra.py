@@ -1,6 +1,13 @@
 # https://py.checkio.org/en/mission/boolean-algebra/
 
-OPERATION_NAMES = ("conjunction", "disjunction", "implication", "exclusive", "equivalence")
+OPERATION_NAMES = (
+    "conjunction",  # x∧y
+    "disjunction",  # x∨y
+    "implication",  # x→y
+    "exclusive",    # x⊕y
+    "equivalence"   # x≡y
+    )
+
 
 def boolean(x, y, operation):
     return 1 or 0
