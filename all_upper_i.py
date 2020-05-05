@@ -17,6 +17,8 @@ if __name__ == '__main__':
     assert is_all_upper('all lower') == False
     assert is_all_upper('mixed UPPER and lower') == False
     assert is_all_upper('') == True
+    assert is_all_upper('123') == False
+
     print("Coding complete? Click 'Check' to earn cool rewards!")
 
 
