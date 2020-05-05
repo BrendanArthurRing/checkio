@@ -2,7 +2,10 @@
 
 def is_all_upper(text: str) -> bool:
     # your code here
-    return False
+    for char in text.replace(" ", ""):
+        if not char.isupper():
+            return False
+    return True
 
 
 if __name__ == '__main__':
